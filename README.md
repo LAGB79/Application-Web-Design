@@ -13,51 +13,47 @@
 ###**Markdown** 
 Markdown es un lenguaje de marcado ligero creado para redactar texto con formato de manera sencilla y legible. A diferencia de los procesadores de texto complejos como Word, Markdown utiliza caracteres simples de puntuación como asteriscos, guiones y almohadillas para definir estilos como negritas, listas o encabezados.
 
----
+## Opciones de Etiquetado en Markdown
+Markdown ofrece diversas opciones para dar formato al texto de manera simple:
 
-## Opciones de Etiquetado de Markdown
-
-* **Encabezados:** Se definen con almohadillas (`#`).
-    * `# Título 1`
-    * `## Título 2`
+* **Encabezados:** Se utilizan almohadillas para jerarquizar el contenido (ej. `# Título`, `## Subtítulo`).
 * **Énfasis:**
-    * **Negrita:** Se encierra el texto en `**` (ej. `**Texto**`).
-    * *Cursiva:* Se encierra el texto en `*` (ej. `*Texto*`).
+  * **Negrita:** Se usa doble asterisco (`**texto**`).
+  * *Cursiva:* Se usa un solo asterisco (`*texto*`).
 * **Listas:**
-    * **No ordenadas:** Usan guiones (`-`) o asteriscos (`*`).
-    * **Ordenadas:** Usan números seguidos de un punto (`1.`).
+  * **No ordenadas:** Se usan guiones (`-`) o asteriscos (`*`).
+  * **Ordenadas:** Se usan números (`1.`, `2.`).
+* **Código:**
+  * En línea: Se usan comillas invertidas simples (`` `codigo` ``).
+  * Bloque: Se usan tres comillas invertidas (\`\`\`).
 * **Enlaces e Imágenes:**
-    * Enlace: `[Texto](URL)`
-    * Imagen: `![Descripción](Ruta de imagen)`
-* **Bloques de Código:** Se usan tres comillas invertidas (\`\`\`) antes y después del código.
+  * Enlaces: `[Texto](url)`
+  * Imágenes: `![Texto alternativo](url_imagen)`
 
-## Comandos Básicos de Git
+## Comandos de Git Utilizados
 
 ### 1. Estado y Preparación
-* **Verificar el estado del repositorio:**
-    `git status`
-    *Muestra qué archivos han cambiado o están listos para guardarse.*
+* **Verificar estado del repositorio:**
+  `git status`
+* **Agregar archivos al área de preparación (Staging):**
+  * Un archivo específico: `git add nombre_archivo.ext`
+  * Todos los archivos (Global): `git add .`
 
-* **Agregar archivos:**
-    * Individualmente: `git add nombre_del_archivo.ext`
-    * Globalmente (todos los cambios): `git add .`
+### 2. Guardar Cambios
+* **Crear un commit con comentario:**
+  `git commit -m "Tu comentario descriptivo aquí"`
 
-### 2. Guardar Cambios (Commit)
-* **Añadir comentarios al commit:**
-    `git commit -m "Escribe aquí tu descripción del cambio"`
-
-### 3. Sincronización
+### 3. Sincronización Remota
 * **Subir cambios al repositorio remoto:**
-    `git push origin main`
-    *(Nota: `main` es la rama principal, a veces puede llamarse `master`).*
+  `git push origin main`
 
 ### 4. Gestión de Ramas (Branches)
-* **Crear una rama:** `git branch nombre_nueva_rama`
-* **Navegar (cambiar) de rama:** `git checkout nombre_rama` (o `git switch nombre_rama`)
-* **Listar ramas:** `git branch`
+* **Crear una rama:** `git branch nombre_rama`
+* **Navegar/Listar ramas (Browse):**
+  * Ver ramas existentes: `git branch`
+  * Cambiar de rama: `git checkout nombre_rama`
 * **Eliminar una rama:** `git branch -d nombre_rama`
 
-### 5. Historial y Restauración
-* **Regresar (Roll back) a un commit específico:**
-    `git reset --hard <hash_del_commit>`
-    *(Advertencia: Esto borra los cambios hechos después de ese commit).*
+### 5. Restaurar Repositorio
+* **Regresar a un commit específico (Roll back):**
+  `git reset --hard <hash_del_commit>`
